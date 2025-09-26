@@ -1,0 +1,10 @@
+
+@mixin horizontal($margin) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin vertical($margin) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}

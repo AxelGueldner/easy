@@ -1,0 +1,14 @@
+
+@mixin figure($objectfit: cover) {
+  margin: 0;
+
+  :is(picture, img, video) {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  :is(img, video) {
+    object-fit: $objectfit;
+  }
+}

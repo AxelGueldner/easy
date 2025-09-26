@@ -1,0 +1,10 @@
+
+@function clampMe($clampMin, $clampMax, $winMin: 360, $winMax: 1920) {
+  $pxGrowthPerVw: #{calc(($clampMax - $clampMin) / ($winMax - $winMin))};
+
+  @return clamp(rem($clampMin), #{calc(100vw * $pxGrowthPerVw + rem($clampMin) - rem(#{calc($pxGrowthPerVw * $winMin)}))}, rem($clampMax));
+}
+
+@function rem($value, $base: 16) {
+  @return #{calc($value / $base * 1rem)};
+}

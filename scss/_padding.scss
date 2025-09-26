@@ -1,0 +1,10 @@
+
+@mixin horizontal($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin vertical($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}

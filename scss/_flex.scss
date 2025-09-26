@@ -1,0 +1,37 @@
+
+@mixin _base-horizontal($gap: 0, $reverse: false) {
+  column-gap: $gap;
+
+  @if $reverse {
+    flex-direction: row-reverse;
+  } @else {
+    flex-direction: row;
+  }
+}
+
+@mixin _base-vertical($gap: 0, $reverse: false) {
+  row-gap: $gap;
+
+  @if $reverse {
+    flex-direction: column-reverse;
+  } @else {
+    flex-direction: column;
+  }
+}
+
+@mixin block-horizontal($gap: 0, $reverse: false) {
+  display: flex;
+  @include _base-horizontal($gap, $reverse);
+}
+@mixin inline-horizontal($gap: 0, $reverse: false) {
+  display: inline-flex;
+  @include _base-horizontal($gap, $reverse);
+}
+@mixin block-vertical($gap: 0, $reverse: false) {
+  display: flex;
+  @include _base-vertical($gap, $reverse);
+}
+@mixin inline-vertical($gap: 0, $reverse: false) {
+  display: inline-flex;
+  @include _base-vertical($gap, $reverse);
+}

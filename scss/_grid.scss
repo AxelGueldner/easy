@@ -1,0 +1,35 @@
+@use "sass:math";
+@use "_margin" as margin;
+
+@mixin grid($outsideWidth, $insideWidth, $maxSpan: 100%, $elementGap: 0, $className: grid-item-, $elementCount: 12, $deep: false) {
+  display: grid;
+  column-gap: $elementGap;
+  grid-template-columns: repeat($elementCount, 1fr);
+
+  max-width: $maxSpan;
+  width: calc(#{$insideWidth} / #{$outsideWidth} * 100%);
+
+  @include margin.horizontal(auto);
+
+  @for $index from 1 through $elementCount {
+    @if $deep {
+      :deep(.#{$className}-#{$index}:not([class*="#{$className}-off-"])) {
+        grid-column: span $index;
+      }
+      @for $offset from 1 through $elementCount - $index {
+        :deep(.#{$className}-#{$index}.#{$className}-off-#{$offset}) {
+          grid-column: ($offset + 1) / span $index;
+        }
+      }
+    } @else {
+      .#{$className}-#{$index}:not([class*="#{$className}-off-"]) {
+        grid-column: span $index;
+      }
+      @for $offset from 1 through $elementCount - $index {
+        .#{$className}-#{$index}.#{$className}-off-#{$offset} {
+          grid-column: ($offset + 1) / span $index;
+        }
+      }
+    }
+  }
+}

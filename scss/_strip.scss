@@ -1,0 +1,23 @@
+/// remove browser preset styles for buttons
+@mixin stripTheButton {
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 0;
+  text-align: unset;
+}
+
+// remove browser presets for lists
+@mixin stripTheList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// remove browser presets for inputs
+@mixin stripTheInput {
+  background: none;
+  border: none;
+  padding: 0;
+}
