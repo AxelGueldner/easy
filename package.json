@@ -1,5 +1,5 @@
 {
-  "name": "imx-easyMixins",
+  "name": "imx-easy-mixins",
   "version": "0.0.1",
   "description": "Standard infomax Mixin Library",
   "exports": {
