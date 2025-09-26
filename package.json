@@ -1,5 +1,5 @@
 {
-  "name": "easy",
+  "name": "imx-easyMixins",
   "version": "0.0.1",
   "description": "Standard infomax Mixin Library",
   "exports": {
@@ -8,8 +8,12 @@
     },
     "./less": "./less/index.less"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AxelGueldner/easy"
+  }
   "keywords": ["scss", "less", "mixin", "library"],
   "author": "Axel Güldner <gueldner@infomax-it.de>",
-  "license": "MIT",
+  "license": "ISC",
   "type": "module"
 }
